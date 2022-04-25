@@ -1,14 +1,24 @@
 <template>
- <RouterView />
+  <el-config-provider :locale="lang">
+    <el-container>
+      <el-header>
+        <NavBar />
+      </el-header>
+      <el-main>
+        <RouterView />
+      </el-main>
+      <el-footer>
+
+      </el-footer>
+    </el-container>
+  </el-config-provider>
 </template>
+<script lang="ts" setup>
+import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import NavBar from './components/NavBar.vue';
+const lang = zhCn;
+</script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+#app {}
 </style>
